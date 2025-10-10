@@ -6,9 +6,10 @@ je = jm.export
 x = jv.variable('x')
 
 f_x = jf.function(x)
-f_x.set_equations("x**2")
+
+f_x.set_equations("sin(x)")
 f_x.delta = .3
-f_x.calculate([-3, 3])
+f_x.calculate([-7, 7])
 
 print(f"Domain: \n{f_x.domain}")
 print(f"Range: \n{f_x.range}")

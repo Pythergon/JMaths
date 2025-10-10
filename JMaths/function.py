@@ -12,7 +12,8 @@ class function:
             'x': self.variable.value,
             'sqrt': math.sqrt,
             'pow': math.pow,
-            'pi': math.pi
+            'pi': math.pi,
+            'sin': math.sin
         }
 
     def set_equations(self, equation):
@@ -20,11 +21,11 @@ class function:
         print(f"Set function equation to: {self.equation}")
 
     def calculate(self, domain):
+        # Clear previous results
+        self.domain = []
+        self.range = []
 
         if isinstance(domain, list):
-            # Clear previous results
-            self.domain = []
-            self.range = []
             self.variable.value = domain[0]
             self.calculation_errors = 0
 
@@ -47,5 +48,7 @@ class function:
             self.str_functions['x'] = self.variable.value
 
             self.variable.value = eval(self.equation, self.str_functions)
+
+
 
 
