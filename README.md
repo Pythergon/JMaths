@@ -1,5 +1,5 @@
 # JMaths
-I created this library because I have a problem. I don't like the math animation libraries already out there. I do like sympy though, so I'm making a math animation library based on sympy.
+I created this library because I have a problem. I don't like the math animation libraries already out there. So I'm not making a math animation library but a library made for function analysis for excel.
 
 # Current Progress
-I'm working on graphing as of now (10.1.25)
+Just finished up the working prototype for excel exporting (10.10.25) 
