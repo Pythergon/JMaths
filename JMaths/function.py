@@ -20,21 +20,32 @@ class function:
         print(f"Set function equation to: {self.equation}")
 
     def calculate(self, domain):
-        # Clear previous results
-        self.domain = []
-        self.range = []
-        self.variable.value = domain[0]
-        self.calculation_errors = 0
 
-        if isinstance(self.equation, str):
-            while self.variable.value <= domain[1]:
+        if isinstance(domain, list):
+            # Clear previous results
+            self.domain = []
+            self.range = []
+            self.variable.value = domain[0]
+            self.calculation_errors = 0
 
-                self.str_functions['x'] = self.variable.value
-                self.domain.append(self.variable.value)
-                try:
-                    self.range.append(eval(self.equation, self.str_functions))
-                except Exception:
-                    self.calculation_errors += 1
-                self.variable.value += self.delta
+            if isinstance(self.equation, str):
+                while self.variable.value <= domain[1]:
 
-        print(f"Finished calculating with {self.calculation_errors} calculation errors")
+                    self.str_functions['x'] = self.variable.value
+                    self.domain.append(self.variable.value)
+                    try:
+                        self.range.append(eval(self.equation, self.str_functions))
+                    except Exception:
+                        self.calculation_errors += 1
+                    self.variable.value += self.delta
+
+            print(f"Finished calculating with {self.calculation_errors} calculation errors")
+
+        # If user just wants to computer 1 number
+        elif isinstance(domain, int):
+            self.variable.value = domain
+            self.str_functions['x'] = self.variable.value
+
+            self.variable.value = eval(self.equation, self.str_functions)
+
+

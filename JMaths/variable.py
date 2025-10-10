@@ -5,7 +5,7 @@ class variable:
         self.value = 0
 
     def __str__(self):
-        return f"Name: {self.name}"
+        return f"{self.name} = {self.value}"
 
     def dict(self):
         return {self.name: self.value}
