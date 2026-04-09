@@ -1,4 +1,7 @@
 setup.py
+JMaths/__init__.py
+JMaths/export.py
+JMaths/jmath.py
 JMaths.egg-info/PKG-INFO
 JMaths.egg-info/SOURCES.txt
 JMaths.egg-info/dependency_links.txt
