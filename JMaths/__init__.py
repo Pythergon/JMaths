@@ -1,6 +1,4 @@
 
-from JMaths import variable
-from JMaths import function
+from JMaths import jmath
 from JMaths import export
 
-from JMaths import graph

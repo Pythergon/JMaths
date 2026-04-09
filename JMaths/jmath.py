@@ -1,5 +1,17 @@
 import math
 
+class variable:
+    def __init__(self, name):
+        self.name = name
+        self.value = 0
+
+    def __str__(self):
+        return f"{self.name} = {self.value}"
+
+    def dict(self):
+        return {self.name: self.value}
+
+
 class function:
     def __init__(self, variable):
         self.variable = variable
@@ -49,6 +61,31 @@ class function:
 
             self.variable.value = eval(self.equation, self.str_functions)
 
+def exp(x, terms=25):
+    try:
+        output = 0
+        for i in range(0, terms, 1):
+            output += ((x**i)/(math.factorial(i)))
+        return output
+    except:
+        print(f"Equation Failed: Try checking type")
 
+"""
+TODO
 
+class uni_matrix:
+    def __init__(self, rows):
+        self.rows = rows
+        self.columms = rows
+        self.matrix = []
+        for i in range(self.columms):
+            self.matrix.append([])
+            for j in range(self.rows):
+                self.matrix[i].append([])
 
+    def set(self, i, j, x):
+        self.matrix[i-1][j-1] = x #[j-1][0] = x
+
+    def __repr__(self):
+        print(self.matrix)
+"""
