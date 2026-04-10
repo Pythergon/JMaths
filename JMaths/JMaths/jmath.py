@@ -69,10 +69,53 @@ class function:
             print(f"Domain must be array [x, y] or float/int")
 
 def exp(x, terms=25):
-    try:
-        output = 0
-        for i in range(0, terms, 1):
-            output += ((x**i)/(math.factorial(i)))
-        return output
+    try:     
+        if isinstance(x, float) or isinstance(x, int):
+            output = 0
+            for i in range(0, terms, 1):
+                output += ((x**i)/(math.factorial(i)))
+            return output
+        elif isinstance(x, square_matrix):
+            pass
+
     except:
         print(f"Equation Failed: Try checking type")
+
+'''
+Must be square matrix 
+#of Columns == #of Rows
+
+matrix = [
+    [1, 2],
+    [3, 4]
+]
+'''
+
+class square_matrix:
+    def __init__(self, matrix):
+        for column in matrix:
+            if len(column) != len(matrix):
+                print(f"Not a square Matrix")
+                del self
+                break
+        self.matrix = matrix
+        self.matrix_len = len(matrix)
+
+    def __add__(self, other: square_matrix):
+        pass
+
+    def __mul__(self, other: square_matrix):
+        # Check for same shape
+        if other.matrix_len != self.matrix_len:
+            print(f"__mul__ Matrice length must be the same {other.matrix_len} {self.matrix_len}")
+            pass    
+
+        output_matrix = [[0 for d in range(0, self.matrix_len, 1)] for i in range(0, self.matrix_len, 1)]
+
+        for i in range(0, self.matrix_len, 1):
+            for j in range(0, len(other.matrix[0]), 1):
+                for k in range(0,  other.matrix_len, 1):
+                    output_matrix[i][j] += self.matrix[i][k] * other.matrix[k][j]
+
+        return output_matrix
+

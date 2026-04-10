@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: JMaths
-Version: 0.3.5
+Version: 0.3.6
 Requires-Dist: pandas
 Requires-Dist: openpyxl
 Dynamic: requires-dist
