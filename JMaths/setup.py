@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'JMaths',
-    version = '0.3.3',  # Bump this
+    version = '0.3.4',
     packages = find_packages(),
     install_requires=[
         'pandas',
