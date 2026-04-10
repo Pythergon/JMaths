@@ -12,7 +12,7 @@ if __name__ == '__main__':
     print(f"Domain: \n{f_x.domain}")
     print(f"Range: \n{f_x.range}")
 
-    excelExport(f_x.domain, f_x.range, "Test2")
+    # excelExport(f_x.domain, f_x.range, "Test2")
 
 
 

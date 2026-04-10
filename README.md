@@ -11,6 +11,8 @@ I created this library because I have a problem. I don't like the math animation
 ### Note for self
 Upload to PyPi
 1. Update Package Version
-2. `python3 -m build`
-3. Delete Old Files in /JMaths/JMaths/dist
-4. `python3 -m twine upload dist/* --verbose`
+2. `cd ~/Documents/JMaths/JMaths`
+3. `python3 -m build`
+4. Delete Old Files in /JMaths/JMaths/dist
+5. `python3 -m twine upload dist/* --verbose`
+6. `pip install JMaths==0.x.x --break-system-packages`

@@ -1,4 +1,5 @@
 import math
+from __future__ import annotations
 
 class variable:
     def __init__(self, name: str):
@@ -61,6 +62,8 @@ class function:
             self.str_functions['x'] = self.variable.value
 
             self.variable.value = eval(self.equation, self.str_functions)
+            self.domain = [domain]
+            self.range = [self.variable.value]
 
         else:
             print(f"Domain must be array [x, y] or float/int")
