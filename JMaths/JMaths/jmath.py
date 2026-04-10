@@ -1,7 +1,7 @@
 import math
 
 class variable:
-    def __init__(self, name):
+    def __init__(self, name: str):
         self.name = name
         self.value = 0
 
@@ -13,7 +13,7 @@ class variable:
 
 
 class function:
-    def __init__(self, variable):
+    def __init__(self, variable: variable):
         self.variable = variable
         self.equation = None
         self.delta = .01
@@ -25,10 +25,11 @@ class function:
             'sqrt': math.sqrt,
             'pow': math.pow,
             'pi': math.pi,
-            'sin': math.sin
+            'sin': math.sin,
+            'exp': exp
         }
 
-    def set_equations(self, equation):
+    def set_equations(self, equation: str):
         self.equation = equation
         print(f"Set function equation to: {self.equation}")
 
@@ -61,6 +62,9 @@ class function:
 
             self.variable.value = eval(self.equation, self.str_functions)
 
+        else:
+            print(f"Domain must be array [x, y] or float/int")
+
 def exp(x, terms=25):
     try:
         output = 0
@@ -69,23 +73,3 @@ def exp(x, terms=25):
         return output
     except:
         print(f"Equation Failed: Try checking type")
-
-"""
-TODO
-
-class uni_matrix:
-    def __init__(self, rows):
-        self.rows = rows
-        self.columms = rows
-        self.matrix = []
-        for i in range(self.columms):
-            self.matrix.append([])
-            for j in range(self.rows):
-                self.matrix[i].append([])
-
-    def set(self, i, j, x):
-        self.matrix[i-1][j-1] = x #[j-1][0] = x
-
-    def __repr__(self):
-        print(self.matrix)
-"""
